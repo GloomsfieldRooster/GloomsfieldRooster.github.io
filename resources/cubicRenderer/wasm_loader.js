@@ -8,12 +8,12 @@ function start() {
 
 	if (window.WebAssembly !== undefined) {
 		var r = new XMLHttpRequest();
-		r.open("GET", "build/GhostEngine.wasm", true);
+		r.open("GET", "resources/cubicRenderer/GhostEngine.wasm", true);
 		r.responseType = "arraybuffer";
 		r.onload = function () {
 			Module.wasmBinary = r.response;
 			var script = document.createElement("script");
-			script.src = "GhostEngine.js";
+			script.src = "resources/cubicRenderer/GhostEngine.js";
 			document.body.appendChild(script);
 		};
 
